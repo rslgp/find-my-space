@@ -1,9 +1,13 @@
 // server.js
+var compression = require('compression')
 var express = require('express');
 var path = require('path');
 var serveStatic = require('serve-static');
 
 app = express();
+
+app.use(compression()); //gzip
+
 //app.use(serveStatic(__dirname + "/dist"));
 app.use(express.static(__dirname + "/dist/"));
 
